@@ -14,6 +14,9 @@ protected $maxLength;
 /** @var array */
 protected $validValues = [];
 ```
+Examples:
+- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Season.php
+- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Password.php
 
 ## ValueObject\IntegerValue
 ```
@@ -23,3 +26,6 @@ protected $validValues = [];
 /** @var array */
 protected $validRange = [];
 ```
+
+Examples:
+- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Age.php
