@@ -52,14 +52,14 @@ abstract class IntegerValue
         }
 
         if (in_array($value, $this->validValues) === false) {
-            throw new \InvalidArgumentException;
+            throw InvalidValueException::notEqualToAnyValidValues();
         }
     }
 
     private function validateRange(array $range, int $value)
     {
         if (reset($range) > $value || end($range) < $value) {
-            throw new \InvalidArgumentException;
+            throw InvalidValueException::notInRange();
         }
     }
 }

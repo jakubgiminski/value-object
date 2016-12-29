@@ -51,15 +51,15 @@ abstract class StringValue
     protected function validate(string $value)
     {
         if ($this->minLength && $this->minLength > strlen($value)) {
-            throw new \InvalidArgumentException("Value must be at least {$this->minLength} characters long.");
+            throw InvalidValueException::tooShort($this->minLength);
         }
 
         if ($this->maxLength && $this->maxLength < strlen($value)) {
-            throw new \InvalidArgumentException("Value must be no longer than {$this->minLength} characters.");
+            throw InvalidValueException::tooLong($this->maxLength);
         }
 
         if (!empty($this->validValues) && in_array($value, $this->validValues) === false) {
-            throw new \InvalidArgumentException;
+            throw InvalidValueException::notEqualToAnyValidValues();
         }
     }
 }
