@@ -7,6 +7,12 @@ abstract class StringValue
     /** @var string */
     protected $value;
 
+    /** @var int */
+    protected $minLength;
+
+    /** @var int */
+    protected $maxLength;
+
     /** @var array */
     protected $validValues = [];
 
@@ -44,7 +50,15 @@ abstract class StringValue
      */
     protected function validate(string $value)
     {
-        if (in_array($value, $this->validValues) === false) {
+        if ($this->minLength && $this->minLength > strlen($value)) {
+            throw new \InvalidArgumentException("Value must be at least {$this->minLength} characters long.");
+        }
+
+        if ($this->maxLength && $this->maxLength < strlen($value)) {
+            throw new \InvalidArgumentException("Value must be no longer than {$this->minLength} characters.");
+        }
+
+        if (!empty($this->validValues) && in_array($value, $this->validValues) === false) {
             throw new \InvalidArgumentException;
         }
     }
