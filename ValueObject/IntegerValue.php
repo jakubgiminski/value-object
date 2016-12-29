@@ -10,6 +10,9 @@ abstract class IntegerValue
     /** @var array */
     protected $validValues = [];
 
+    /** @var array */
+    protected $validRange = [];
+
     /**
      * @param int $value
      * @throws \InvalidArgumentException
@@ -43,7 +46,19 @@ abstract class IntegerValue
      */
     protected function validate(int $value)
     {
+        if (count($this->validRange) === 2) {
+            $this->validateRange($this->validRange, $value);
+            return;
+        }
+
         if (in_array($value, $this->validValues) === false) {
+            throw new \InvalidArgumentException;
+        }
+    }
+
+    private function validateRange(array $range, int $value)
+    {
+        if (reset($range) > $value || end($range) < $value) {
             throw new \InvalidArgumentException;
         }
     }
