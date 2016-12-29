@@ -20,7 +20,7 @@ class AgeTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException ValueObject\InvalidValueException
      */
     public function testCanNotBeNegative()
     {
@@ -28,7 +28,7 @@ class AgeTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException ValueObject\InvalidValueException
      */
     public function testCanNotBeUnhumanlyHigh()
     {

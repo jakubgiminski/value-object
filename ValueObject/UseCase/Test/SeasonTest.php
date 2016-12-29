@@ -36,7 +36,7 @@ class SeasonTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException ValueObject\InvalidValueException
      */
     public function testCanNotBeInvalid()
     {

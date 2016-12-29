@@ -14,7 +14,7 @@ class PasswordTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException ValueObject\InvalidValueException
      */
     public function testCanNotBeFourCharactersLong()
     {
@@ -22,7 +22,7 @@ class PasswordTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException ValueObject\InvalidValueException
      */
     public function testCanNotBeTwentyCharactersLong()
     {
