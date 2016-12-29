@@ -10,7 +10,6 @@ class PasswordTest extends TestCase
     public function testCanBeTenCharactersLong()
     {
         $password = new Password('1234567890');
-        self::assertInstanceOf(Password::class, $password);
         self::assertSame($password->getValue(), '1234567890');
     }
 

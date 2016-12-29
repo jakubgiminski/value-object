@@ -10,14 +10,12 @@ class AgeTest extends TestCase
     public function testCanBeVeryYoung()
     {
         $age = new Age(0);
-        self::assertInstanceOf(Age::class, $age);
         self::assertSame($age->getValue(), 0);
     }
 
     public function testCanBeVeryOld()
     {
         $age = new Age(101);
-        self::assertInstanceOf(Age::class, $age);
         self::assertSame($age->getValue(), 101);
     }
 
