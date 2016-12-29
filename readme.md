@@ -1,5 +1,4 @@
 # Value Object
-[![Coverage Status](https://coveralls.io/repos/github/jakubgiminski/value-object/badge.svg?branch=master)](https://coveralls.io/github/jakubgiminski/value-object?branch=master)
 
 This is a library of abstract classes intended to be used as bases for value objects. 
 Includes examples in form of unit tested use cases.
