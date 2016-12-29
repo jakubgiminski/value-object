@@ -1,0 +1,19 @@
+{
+    "name": "jakubgiminski/value-object",
+    "description": "Library of abstract classes intended to be used as bases for value objects.",
+    "type": "library",
+    "require": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "authors": [
+        {
+            "name": "Jakub Giminski",
+            "email": "jakubgiminski@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ValueObject\\": "ValueObject"
+        }
+    }
+}
