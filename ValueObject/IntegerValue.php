@@ -5,13 +5,16 @@ namespace ValueObject;
 abstract class IntegerValue
 {
     /** @var int */
-    protected $value;
+    private $value;
+
+    /** @var array */
+    protected $validRange = [];
 
     /** @var array */
     protected $validValues = [];
 
     /** @var array */
-    protected $validRange = [];
+    protected $invalidValues = [];
 
     /**
      * @param int $value
@@ -46,20 +49,55 @@ abstract class IntegerValue
      */
     protected function validate(int $value)
     {
-        if (count($this->validRange) === 2) {
-            $this->validateRange($this->validRange, $value);
-            return;
+        if ($this->isNotInRange($value)) {
+            throw InvalidValueException::notInRange();
         }
 
-        if (in_array($value, $this->validValues) === false) {
-            throw InvalidValueException::notEqualToAnyValidValues();
+        if ($this->isNotAmongValid($value)) {
+            throw InvalidValueException::notAmongValid();
+        }
+
+        if ($this->isAmongInvalid($value)) {
+            throw InvalidValueException::amongInvalid();
         }
     }
 
-    private function validateRange(array $range, int $value)
+    /**
+     * @param int $value
+     * @return bool
+     */
+    protected function isAmongInvalid(int $value): bool
     {
-        if (reset($range) > $value || end($range) < $value) {
-            throw InvalidValueException::notInRange();
+        if (empty($this->invalidValues)) {
+            return false;
         }
+
+        return in_array($value, $this->invalidValues) !== false;
+    }
+
+    /**
+     * @param int $value
+     * @return bool
+     */
+    protected function isNotAmongValid(int $value): bool
+    {
+        if (empty($this->validValues)) {
+            return false;
+        }
+
+        return in_array($value, $this->validValues) === false;
+    }
+
+    /**
+     * @param int $value
+     * @return bool
+     */
+    protected function isNotInRange(int $value): bool
+    {
+        if (count($this->validRange) !== 2) {
+            return false;
+        }
+
+        return reset($this->validRange) > $value || end($this->validRange) < $value;
     }
 }

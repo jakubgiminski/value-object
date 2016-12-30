@@ -59,7 +59,7 @@ abstract class StringValue
         }
 
         if (!empty($this->validValues) && in_array($value, $this->validValues) === false) {
-            throw InvalidValueException::notEqualToAnyValidValues();
+            throw InvalidValueException::notAmongValid();
         }
     }
 }

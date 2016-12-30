@@ -14,13 +14,18 @@ class InvalidValueException extends \InvalidArgumentException
         return new self("Value must be no longer than $maxLength characters.");
     }
 
-    public static function notEqualToAnyValidValues(): self
-    {
-        return new self('Value is invalid.');
-    }
-
     public static function notInRange(): self
     {
         return new self('Value not in valid range.');
+    }
+
+    public static function notAmongValid(): self
+    {
+        return new self('Value is not valid.');
+    }
+
+    public static function amongInvalid(): self
+    {
+        return new self('Value is invalid.');
     }
 }
