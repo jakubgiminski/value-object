@@ -1,11 +1,17 @@
 # Value Object
 
-A library of abstract classes intended to be used as bases for value objects. 
-Includes examples in form of unit tested use cases.
+This library is useful for building value objects in php. It is a collection of
+abstract classes (each for every scalar type), that contain common validation mechanisms,
+so you don't have to write them.
 
-__Required PHP Version: 7.0.0 or higher.__
+So far, we have `StringValue` and `IntegerValue` which already satisfy most of the needs.
+More scalar representations may be implemented in the future (feel free to contribute).
 
-## ValueObject\StringValue
+Look [here](https://github.com/jakubgiminski/value-object/tree/master/ValueObject/UseCase) to find some unit tested examples.
+
+Required PHP version: __7.0.0 or higher__
+
+### ValueObject\StringValue
 Rules (optional):
 ```
 /** @var int */
@@ -21,7 +27,7 @@ Examples of usage:
 - https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Season.php
 - https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Password.php
 
-## ValueObject\IntegerValue
+### ValueObject\IntegerValue
 Rules (optional):
 ```
 /** @var array */
