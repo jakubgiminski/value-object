@@ -24,8 +24,8 @@ protected $maxLength;
 protected $validValues = [];
 ```
 Examples of usage:
-- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Season.php
-- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Password.php
+- [Season](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Season.php)
+- [Password](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Password.php)
 
 ### ValueObject\IntegerValue
 Rules (optional):
@@ -40,5 +40,5 @@ protected $validValues = [];
 protected $invalidValues = [];
 ```
 Examples of usage:
-- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Age.php
-- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/TheatreSeat.php
+- [Age](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Age.php)
+- [TheatreSeat](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/TheatreSeat.php)
