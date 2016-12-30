@@ -4,6 +4,7 @@ This is a library of abstract classes intended to be used as bases for value obj
 Includes examples in form of unit tested use cases.
 
 ## ValueObject\StringValue
+Rules (optional):
 ```
 /** @var int */
 protected $minLength;
@@ -19,13 +20,17 @@ Examples:
 - https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Password.php
 
 ## ValueObject\IntegerValue
+Rules (optional):
 ```
+/** @var array */
+protected $validRange = [];
+
 /** @var array */
 protected $validValues = [];
 
 /** @var array */
-protected $validRange = [];
+protected $invalidValues = [];
 ```
-
 Examples:
 - https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Age.php
+- https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/TheatreSeat.php
