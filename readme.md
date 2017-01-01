@@ -11,6 +11,9 @@ Look [here](https://github.com/jakubgiminski/value-object/tree/master/ValueObjec
 
 Required PHP version: __7.0.0 or higher__
 
+## Installation
+`composer require jakubgiminski/value-object`
+
 ## Overview
 Every ValueObject has a `getValue()` method.
 
