@@ -2,7 +2,7 @@
 
 namespace ValueObject\UseCase;
 
-use ValueObject\IntegerValue;
+use ValueObject\IntegerValue\IntegerValue;
 
 final class TheatreSeat extends IntegerValue
 {

@@ -1,6 +1,8 @@
 <?php
 
-namespace ValueObject;
+namespace ValueObject\IntegerValue;
+
+use ValueObject\InvalidValueException;
 
 abstract class IntegerValue implements IntegerValueInterface
 {

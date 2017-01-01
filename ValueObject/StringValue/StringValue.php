@@ -1,6 +1,8 @@
 <?php
 
-namespace ValueObject;
+namespace ValueObject\StringValue;
+
+use ValueObject\InvalidValueException;
 
 abstract class StringValue implements StringValueInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ValueObject;
+namespace ValueObject\IntegerValue;
 
 interface IntegerValueInterface
 {

@@ -2,7 +2,7 @@
 
 namespace ValueObject\UseCase;
 
-use ValueObject\StringValue;
+use ValueObject\StringValue\StringValue;
 
 final class Password extends StringValue
 {
