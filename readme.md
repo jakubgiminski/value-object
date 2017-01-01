@@ -21,7 +21,7 @@ Every ValueObject has a `getValue()` method.
 
 ### ValueObject\StringValue
 Validation rules (optional):
-```
+```php
 /** @var int */
 protected $minLength;
 
@@ -32,7 +32,7 @@ protected $maxLength;
 protected $validValues = [];
 ```
 Comparison methods:
-```
+```php
 public function isEqual(StringValueInterface $stringValue): bool;
 public function isShorterThan(StringValueInterface $stringValue): bool;
 public function isLongerThan(StringValueInterface $stringValue): bool;
@@ -43,7 +43,7 @@ Examples of usage:
 
 ### ValueObject\IntegerValue
 Validation rules (optional):
-```
+```php
 /** @var array */
 protected $validRange = [];
 
@@ -54,7 +54,7 @@ protected $validValues = [];
 protected $invalidValues = [];
 ```
 Comparison methods:
-```
+```php
 public function isEqual(IntegerValueInterface $integerValue): bool;
 public function isLessThan(IntegerValueInterface $integerValue): bool;
 public function isGreaterThan(IntegerValueInterface $integerValue): bool;
