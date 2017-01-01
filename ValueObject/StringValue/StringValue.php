@@ -2,10 +2,10 @@
 
 namespace ValueObject\StringValue;
 
-use ValueObject\InvalidValueException;
-
 abstract class StringValue implements StringValueInterface
 {
+    use ValidateStringValue;
+
     /** @var string */
     protected $value;
 
@@ -45,33 +45,21 @@ abstract class StringValue implements StringValueInterface
         return $this->getValue() === $stringValue->getValue();
     }
 
+    /**
+     * @param StringValueInterface $stringValue
+     * @return bool
+     */
     public function isShorterThan(StringValueInterface $stringValue): bool
     {
         return strlen($this->getValue()) < strlen($stringValue->getValue());
     }
 
+    /**
+     * @param StringValueInterface $stringValue
+     * @return bool
+     */
     public function isLongerThan(StringValueInterface $stringValue): bool
     {
         return strlen($this->getValue()) > strlen($stringValue->getValue());
-    }
-
-    /**
-     * @param string $value
-     * @throws \InvalidArgumentException
-     * @return self
-     */
-    protected function validate(string $value)
-    {
-        if ($this->minLength && $this->minLength > strlen($value)) {
-            throw InvalidValueException::tooShort($this->minLength);
-        }
-
-        if ($this->maxLength && $this->maxLength < strlen($value)) {
-            throw InvalidValueException::tooLong($this->maxLength);
-        }
-
-        if (!empty($this->validValues) && in_array($value, $this->validValues) === false) {
-            throw InvalidValueException::notAmongValid();
-        }
     }
 }
