@@ -11,8 +11,11 @@ Look [here](https://github.com/jakubgiminski/value-object/tree/master/ValueObjec
 
 Required PHP version: __7.0.0 or higher__
 
+## Overview
+Every ValueObject has a `getValue()` method.
+
 ### ValueObject\StringValue
-Rules (optional):
+Validation rules (optional):
 ```
 /** @var int */
 protected $minLength;
@@ -23,12 +26,18 @@ protected $maxLength;
 /** @var array */
 protected $validValues = [];
 ```
+Comparison methods:
+```
+public function isEqual(StringValueInterface $stringValue): bool;
+public function isShorterThan(StringValueInterface $stringValue): bool;
+public function isLongerThan(StringValueInterface $stringValue): bool;
+```
 Examples of usage:
 - [Season](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Season.php)
 - [Password](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Password.php)
 
 ### ValueObject\IntegerValue
-Rules (optional):
+Validation rules (optional):
 ```
 /** @var array */
 protected $validRange = [];
@@ -38,6 +47,12 @@ protected $validValues = [];
 
 /** @var array */
 protected $invalidValues = [];
+```
+Comparison methods:
+```
+public function isEqual(IntegerValueInterface $integerValue): bool;
+public function isLessThan(IntegerValueInterface $integerValue): bool;
+public function isGreaterThan(IntegerValueInterface $integerValue): bool;
 ```
 Examples of usage:
 - [Age](https://github.com/jakubgiminski/value-object/blob/master/ValueObject/UseCase/Age.php)
