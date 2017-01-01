@@ -28,4 +28,25 @@ class PasswordTest extends TestCase
     {
         new Password('12345678901234567890');
     }
+
+    public function testCanBeEqualToAnotherPassword()
+    {
+        self::assertTrue(
+            (new Password('secret'))->isEqual(new Password('secret'))
+        );
+    }
+
+    public function testCanBeLongerThanAnotherPassword()
+    {
+        self::assertTrue(
+            (new Password('long secret'))->isLongerThan(new Password('secret'))
+        );
+    }
+
+    public function testCanBeShorterThanAnotherPassword()
+    {
+        self::assertTrue(
+            (new Password('secret'))->isShorterThan(new Password('long secret'))
+        );
+    }
 }

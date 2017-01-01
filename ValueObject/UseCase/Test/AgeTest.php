@@ -34,4 +34,25 @@ class AgeTest extends TestCase
     {
         new Age(300);
     }
+
+    public function testCanBeEqualToAnotherAge()
+    {
+        self::assertTrue(
+            (new Age(27))->isEqual(new Age(27))
+        );
+    }
+
+    public function testCanBeGreaterThanAnotherAge()
+    {
+        self::assertTrue(
+            (new Age(27))->isGreaterThan(new Age(26))
+        );
+    }
+
+    public function testCanBeLessThanAnotherAge()
+    {
+        self::assertTrue(
+            (new Age(26))->isLessThan(new Age(27))
+        );
+    }
 }

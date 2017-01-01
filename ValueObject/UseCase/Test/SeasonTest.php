@@ -42,4 +42,11 @@ class SeasonTest extends TestCase
     {
         new Season('invalid season name');
     }
+
+    public function testCanBeEqualToAnotherSeason()
+    {
+        self::assertTrue(
+            Season::winter()->isEqual(Season::winter())
+        );
+    }
 }
