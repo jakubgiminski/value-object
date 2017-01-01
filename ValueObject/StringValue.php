@@ -2,7 +2,7 @@
 
 namespace ValueObject;
 
-abstract class StringValue
+abstract class StringValue implements StringValueInterface
 {
     /** @var string */
     protected $value;
@@ -35,12 +35,22 @@ abstract class StringValue
     }
 
     /**
-     * @param StringValue $stringValue
+     * @param StringValueInterface $stringValue
      * @return bool
      */
-    public function isEqual(StringValue $stringValue): bool
+    public function isEqual(StringValueInterface $stringValue): bool
     {
         return $this->getValue() === $stringValue->getValue();
+    }
+
+    public function isShorterThan(StringValueInterface $stringValue): bool
+    {
+        return strlen($this->getValue()) < strlen($stringValue->getValue());
+    }
+
+    public function isLongerThan(StringValueInterface $stringValue): bool
+    {
+        return strlen($this->getValue()) > strlen($stringValue->getValue());
     }
 
     /**

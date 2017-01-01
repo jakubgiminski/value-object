@@ -2,7 +2,7 @@
 
 namespace ValueObject;
 
-abstract class IntegerValue
+abstract class IntegerValue implements IntegerValueInterface
 {
     /** @var int */
     private $value;
@@ -35,12 +35,30 @@ abstract class IntegerValue
     }
 
     /**
-     * @param IntegerValue $integerValue
+     * @param IntegerValueInterface $integerValue
      * @return bool
      */
-    public function isEqual(IntegerValue $integerValue): bool
+    public function isEqual(IntegerValueInterface $integerValue): bool
     {
         return $this->getValue() === $integerValue->getValue();
+    }
+
+    /**
+     * @param IntegerValueInterface $integerValue
+     * @return bool
+     */
+    public function isLessThan(IntegerValueInterface $integerValue): bool
+    {
+        return $this->getValue() < $integerValue->getValue();
+    }
+
+    /**
+     * @param IntegerValueInterface $integerValue
+     * @return bool
+     */
+    public function isGreaterThan(IntegerValueInterface $integerValue): bool
+    {
+        return $this->getValue() > $integerValue->getValue();
     }
 
     /**
