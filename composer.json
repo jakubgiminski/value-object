@@ -2,7 +2,7 @@
     "name": "jakubgiminski/value-object",
     "description": "Library of abstract classes intended to be used as bases for value objects.",
     "type": "library",
-    "require": {
+    "require-dev": {
         "phpunit/phpunit": "^5.7"
     },
     "authors": [
